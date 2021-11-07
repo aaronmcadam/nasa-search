@@ -1,13 +1,13 @@
-import { getGreeting } from '../support/app.po';
+import { getHeading } from '../support/app.po';
 
 describe('nasa-search', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
+  it('displays app title', () => {
     // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+    // cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to nasa-search!');
+    getHeading().contains('NASA Search');
   });
 });

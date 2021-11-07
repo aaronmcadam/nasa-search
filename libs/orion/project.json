@@ -1,0 +1,23 @@
+{
+  "root": "libs/orion",
+  "sourceRoot": "libs/orion/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/orion/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/orion"],
+      "options": {
+        "jestConfig": "libs/orion/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

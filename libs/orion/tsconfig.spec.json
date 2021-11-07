@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node", "@testing-library/jest-dom"]
+    "types": ["jest", "node"]
   },
   "include": [
     "**/*.spec.ts",
@@ -11,9 +11,5 @@
     "**/*.spec.js",
     "**/*.spec.jsx",
     "**/*.d.ts"
-  ],
-  "files": [
-    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
-    "../../node_modules/@nrwl/react/typings/image.d.ts"
   ]
 }

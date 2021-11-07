@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nasa-search/orion": ["libs/orion/src/index.ts"],
+      "@nasa-search/shared-testing": ["libs/shared-testing/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
