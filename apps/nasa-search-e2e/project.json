@@ -1,0 +1,29 @@
+{
+  "root": "apps/nasa-search-e2e",
+  "sourceRoot": "apps/nasa-search-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nasa-search-e2e/cypress.json",
+        "devServerTarget": "nasa-search:serve",
+        "tsConfig": "apps/nasa-search-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "nasa-search:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nasa-search-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nasa-search"]
+}

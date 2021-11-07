@@ -1,0 +1,72 @@
+{
+  "root": "apps/nasa-search",
+  "sourceRoot": "apps/nasa-search/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/nasa-search",
+        "index": "apps/nasa-search/src/index.html",
+        "baseHref": "/",
+        "main": "apps/nasa-search/src/main.tsx",
+        "polyfills": "apps/nasa-search/src/polyfills.ts",
+        "tsConfig": "apps/nasa-search/tsconfig.app.json",
+        "assets": [
+          "apps/nasa-search/src/favicon.ico",
+          "apps/nasa-search/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/nasa-search/src/environments/environment.ts",
+              "with": "apps/nasa-search/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "nasa-search:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "nasa-search:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nasa-search/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/nasa-search"],
+      "options": {
+        "jestConfig": "apps/nasa-search/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

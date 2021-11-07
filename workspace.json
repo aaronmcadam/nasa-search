@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "nasa-search": "apps/nasa-search",
+    "nasa-search-e2e": "apps/nasa-search-e2e"
+  }
+}
