@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nasa-search/feature-files": ["libs/feature-files/src/index.ts"],
       "@nasa-search/orion": ["libs/orion/src/index.ts"],
       "@nasa-search/shared-testing": ["libs/shared-testing/src/index.ts"]
     }
