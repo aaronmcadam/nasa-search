@@ -24,6 +24,13 @@ const overrides = {
   config: {
     useSystemColorMode: true,
   },
+  styles: {
+    global: {
+      body: {
+        bg: 'indigo.900',
+      },
+    },
+  },
 };
 
 export const theme = extendTheme(

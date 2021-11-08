@@ -3,7 +3,7 @@ import { HomeScreen, HomeScreenProps } from './home-screen';
 
 export default {
   component: HomeScreen,
-  title: 'Home Screen',
+  title: 'HomeScreen',
 } as Meta;
 
 const Template: Story<HomeScreenProps> = (args) => <HomeScreen {...args} />;

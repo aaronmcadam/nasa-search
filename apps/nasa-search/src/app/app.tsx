@@ -1,9 +1,5 @@
-import { Box, Heading } from '@nasa-search/orion';
+import { HomeScreen } from '@nasa-search/feature-files';
 
 export function App() {
-  return (
-    <Box p={8}>
-      <Heading>NASA Search</Heading>
-    </Box>
-  );
+  return <HomeScreen />;
 }

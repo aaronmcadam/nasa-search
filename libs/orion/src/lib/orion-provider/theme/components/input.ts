@@ -5,10 +5,10 @@ export const Input = {
   variants: {
     outline: (props: Dict) => ({
       field: {
-        bg: mode('white', 'gray.800')(props),
-        borderColor: mode('gray.300', 'whiteAlpha.400')(props),
+        bg: 'transparent',
+        borderColor: mode('gray.300', 'whiteAlpha.500')(props),
         _placeholder: {
-          color: mode('gray.500', 'gray.400')(props),
+          color: mode('gray.500', 'gray.300')(props),
         },
       },
     }),
