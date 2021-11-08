@@ -1,21 +1,27 @@
 // This module is for components we directly export from Chakra with no customisations.
 
 export {
+  AspectRatio,
   Box,
   chakra,
+  Checkbox,
   Flex,
+  Badge,
   Heading,
+  HStack,
   IconButton,
-  Link,
-  Stack,
-  Text,
-  VisuallyHidden,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
-  HStack,
-  Checkbox,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  Stack,
+  Text,
   useColorMode,
   useColorModeValue,
+  VisuallyHidden,
+  SimpleGrid,
 } from '@chakra-ui/react';
 export type { HTMLChakraProps } from '@chakra-ui/react';
