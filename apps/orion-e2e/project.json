@@ -1,0 +1,28 @@
+{
+  "root": "apps/orion-e2e",
+  "sourceRoot": "apps/orion-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/orion-e2e/cypress.json",
+        "devServerTarget": "orion:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "orion:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/orion-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["orion"]
+}

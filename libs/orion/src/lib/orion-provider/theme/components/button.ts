@@ -40,25 +40,25 @@ export const Button = {
   },
   variants: {
     primary: (props: Dict) => ({
-      bg: mode('purple.600', 'purple.200')(props),
-      color: mode('white', 'purple.800')(props),
+      bg: mode('indigo.600', 'indigo.200')(props),
+      color: mode('white', 'indigo.800')(props),
       _hover: {
-        bg: mode('purple.700', 'purple.300')(props),
+        bg: mode('indigo.700', 'indigo.300')(props),
         _disabled: {
-          bg: mode('purple.600', 'purple.200')(props),
+          bg: mode('indigo.600', 'indigo.200')(props),
         },
       },
       _active: {
-        bg: mode('purple.800', 'purple.400')(props),
+        bg: mode('indigo.800', 'indigo.400')(props),
       },
       _focus: {
         ring: '2px',
-        ringColor: 'purple.500',
+        ringColor: 'indigo.500',
         ringOffset: '2px',
         ringOffsetColor: mode('white', 'gray.800')(props),
       },
       _disabled: {
-        bg: mode('purple.600', 'purple.200')(props),
+        bg: mode('indigo.600', 'indigo.200')(props),
       },
     }),
     secondary: (props: Dict) => ({
@@ -84,17 +84,17 @@ export const Button = {
       },
       _focus: {
         ring: '2px',
-        ringColor: mode('purple.500', 'purple.200')(props),
+        ringColor: mode('indigo.500', 'indigo.200')(props),
         ringOffset: '2px',
         ringOffsetColor: mode('white', 'gray.800')(props),
       },
     }),
     link: (props: Dict) => ({
-      color: mode('purple.600', 'purple.200')(props),
+      color: mode('indigo.600', 'indigo.200')(props),
       boxShadow: 'none',
       _focus: {
         ring: '2px',
-        ringColor: mode('purple.500', 'purple.200')(props),
+        ringColor: mode('indigo.500', 'indigo.200')(props),
         ringOffset: '2px',
         ringOffsetColor: mode('white', 'gray.800')(props),
       },
