@@ -1,3 +1,4 @@
+export * from './lib/logo/logo';
 export * from './lib/button/button';
 export * from './lib/chakra/chakra';
 export * from './lib/icons/icons';

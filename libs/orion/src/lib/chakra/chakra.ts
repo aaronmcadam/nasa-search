@@ -10,3 +10,4 @@ export {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
+export type { HTMLChakraProps } from '@chakra-ui/react';
