@@ -5,7 +5,6 @@
     "nasa-search": "apps/nasa-search",
     "nasa-search-e2e": "apps/nasa-search-e2e",
     "orion": "libs/orion",
-    "orion-e2e": "apps/orion-e2e",
     "shared-testing": "libs/shared-testing"
   }
 }
