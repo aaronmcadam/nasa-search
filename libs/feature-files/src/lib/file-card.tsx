@@ -12,21 +12,30 @@ import {
 import { formatDistanceToNowStrict } from 'date-fns';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-/* eslint-disable-next-line */
-export interface FileCardProps {}
+export enum NasaFileLabel {
+  PHOTO = 'PHOTO',
+  VIDEO = 'VIDEO',
+  AUDIO = 'AUDIO',
+}
 
-export function FileCard(props: FileCardProps) {
-  const createdAt = formatDistanceToNowStrict(new Date(2021, 10, 8), {
+// We don't want to clash with the DOM's File object, so we introduce our own name.
+export interface NasaFile {
+  id: string;
+  name: string;
+  src: string;
+  timestamp: string;
+  label: NasaFileLabel;
+}
+
+/* eslint-disable-next-line */
+export interface FileCardProps {
+  file: NasaFile;
+}
+
+export function FileCard({ file }: FileCardProps) {
+  const createdAt = formatDistanceToNowStrict(new Date(file.timestamp), {
     addSuffix: true,
   });
-
-  const file = {
-    id: 'file-1',
-    name: 'Orion Lift to Transporter',
-    size: '185 MB',
-    createdAt,
-    type: 'VIDEO',
-  };
 
   return (
     <LinkBox as="article" role="group">
@@ -34,7 +43,7 @@ export function FileCard(props: FileCardProps) {
         <AspectRatio rounded="lg" overflow="hidden" w="full" ratio={10 / 7}>
           <LinkOverlay as={ReactRouterLink} to={`/files/${file.id}`}>
             <Image
-              src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1308&q=80"
+              src={file.src}
               alt="Filename"
               boxSize="full"
               objectFit="cover"
@@ -49,22 +58,26 @@ export function FileCard(props: FileCardProps) {
           </LinkOverlay>
         </AspectRatio>
         <Box>
-          <Text fontSize="sm" fontWeight="medium" wordBreak="break-all">
+          <Text
+            data-testid="meta-filename"
+            fontSize="sm"
+            fontWeight="medium"
+            wordBreak="break-all"
+          >
             {file.name}
           </Text>
           <HStack spacing={1}>
-            <Text variant="supporting" fontSize="sm" fontWeight="medium">
-              {file.size}
-            </Text>
-            <Text variant="supporting" fontSize="sm" fontWeight="medium">
-              &middot;
-            </Text>
-            <Text variant="supporting" fontSize="sm" fontWeight="medium">
+            <Text
+              data-testid="meta-created-at"
+              variant="supporting"
+              fontSize="sm"
+              fontWeight="medium"
+            >
               {createdAt}
             </Text>
           </HStack>
           <Box mt={1}>
-            <Badge>{file.type}</Badge>
+            <Badge>{file.label}</Badge>
           </Box>
         </Box>
       </Stack>
