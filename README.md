@@ -2,6 +2,16 @@
 
 A platform for finding files in the NASA file library.
 
+## Screenshots
+
+### Home screen
+
+![Home screen](https://raw.githubusercontent.com/aaronmcadam/nasa-search/main/docs/home-screenshot.jpg)
+
+### File detail screen
+
+![File detail screen](https://raw.githubusercontent.com/aaronmcadam/nasa-search/main/docs/file-detail-screenshot.jpg)
+
 ## Getting started
 
 ### Starting the application server
