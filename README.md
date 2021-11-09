@@ -37,3 +37,7 @@ We use the following technologies:
 ## Orion Design System
 
 Design system for the application. Demonstrates custom themes, using Chakra UI for the implementation. We have flexibility for implementing our own components that are based on Chakra.
+
+## Figma designs
+
+The Figma designs are on the Figma Community here: https://www.figma.com/community/file/1040039982602485494/NASA-Search.
