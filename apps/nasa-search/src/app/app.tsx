@@ -7,12 +7,13 @@ export function App() {
     <Box
       bgImage="/assets/blobs-1.png"
       bgRepeat="no-repeat"
-      bgPosition="left 20%"
+      bgPosition="left 100px"
     >
       <Box
         bgImage="/assets/blobs-2.png"
         bgRepeat="no-repeat"
         bgPosition="right top"
+        minH="100vh"
       >
         <Routes>
           <Route path="/" element={<HomeScreen />} />
