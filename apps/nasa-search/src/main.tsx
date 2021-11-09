@@ -1,14 +1,16 @@
+import { OrionProvider } from '@nasa-search/orion';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
-import { OrionProvider } from '@nasa-search/orion';
-
+import { BrowserRouter } from 'react-router-dom';
 import { App } from './app/app';
 
 ReactDOM.render(
   <StrictMode>
-    <OrionProvider>
-      <App />
-    </OrionProvider>
+    <BrowserRouter>
+      <OrionProvider>
+        <App />
+      </OrionProvider>
+    </BrowserRouter>
   </StrictMode>,
   document.getElementById('root')
 );

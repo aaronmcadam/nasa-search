@@ -68,28 +68,27 @@ export function HomeScreen(props: HomeScreenProps) {
         </Heading>
       </Box>
       {/* File Gallery */}
-      <Box mt={6}>
-        <SimpleGrid
-          as="ul"
-          role="list"
-          aria-labelledby="gallery-heading"
-          columns={{
-            base: 1,
-            sm: 3,
-            '2xl': 4,
-          }}
-          spacingX={{ base: 4, sm: 6, xl: 8 }}
-          spacingY={8}
-          pb={16}
-        >
-          <FileCard />
-          <FileCard />
-          <FileCard />
-          <FileCard />
-          <FileCard />
-          <FileCard />
-        </SimpleGrid>
-      </Box>
+      <SimpleGrid
+        as="ul"
+        role="list"
+        aria-labelledby="gallery-heading"
+        columns={{
+          base: 1,
+          sm: 3,
+          '2xl': 4,
+        }}
+        spacingX={{ base: 4, sm: 6, xl: 8 }}
+        spacingY={8}
+        pb={16}
+        pt={6}
+      >
+        <FileCard />
+        <FileCard />
+        <FileCard />
+        <FileCard />
+        <FileCard />
+        <FileCard />
+      </SimpleGrid>
     </Stack>
   );
 }
