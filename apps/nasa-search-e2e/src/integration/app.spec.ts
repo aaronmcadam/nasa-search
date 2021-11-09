@@ -51,32 +51,33 @@ export interface ApiResponse {
   collection: Collection;
 }
 
-describe('nasa-search', () => {
-  beforeEach(() => cy.visit('/'));
-
-  it('can search for photos', () => {
-    // Stub the API response.
-    const url = `https://images-api.nasa.gov/search?&media_type=image&q=Apollo&year_start=2021&page=1`;
-    const staticResponse: ApiResponse = {
-      collection: {
-        items: [
+const staticResponse: ApiResponse = {
+  collection: {
+    items: [
+      {
+        data: [
           {
-            data: [
-              {
-                nasa_id: 'apollo',
-                title: 'Apollo taking off',
-                date_created: '2021-04-21T00:00:00Z',
-              },
-            ],
-            links: [
-              {
-                href: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1308&q=80',
-              },
-            ],
+            nasa_id: 'apollo',
+            title: 'Apollo taking off',
+            date_created: '2021-04-21T00:00:00Z',
+          },
+        ],
+        links: [
+          {
+            href: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1308&q=80',
           },
         ],
       },
-    };
+    ],
+  },
+};
+
+describe('nasa-search', () => {
+  beforeEach(() => cy.visit('/'));
+
+  it('lets users search for photos', () => {
+    // Stub the API response.
+    const url = `https://images-api.nasa.gov/search?&media_type=image&q=Apollo&year_start=2021&page=1`;
     cy.intercept(url, staticResponse);
 
     // Stub the system date so that we can deterministically test the created at timestamp.
@@ -107,5 +108,20 @@ describe('nasa-search', () => {
     cy.findByTestId('input-search').clear().type('Apollo').type('{enter}');
 
     cy.findByText('Nothing was found!').should('be.visible');
+  });
+
+  it('lets users view file details', () => {
+    // Stub the API response.
+    const url = `https://images-api.nasa.gov/search?&media_type=image&q=Apollo&year_start=2021&page=1`;
+    cy.intercept(url, staticResponse);
+
+    // Stub the system date so that we can deterministically test the created at timestamp.
+    cy.clock(new Date('2021-04-22T00:00:00Z'));
+
+    // Get the search input, type a term into it and submit the form by pressing enter.
+    cy.findByTestId('input-search').clear().type('Apollo').type('{enter}');
+
+    // Click the link to view the file detail screen
+    cy.findByRole('link').click();
   });
 });

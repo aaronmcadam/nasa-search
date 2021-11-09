@@ -2,11 +2,12 @@
 
 export {
   AspectRatio,
+  Badge,
   Box,
   chakra,
   Checkbox,
+  Divider,
   Flex,
-  Badge,
   Heading,
   HStack,
   IconButton,
@@ -17,11 +18,11 @@ export {
   Link,
   LinkBox,
   LinkOverlay,
+  SimpleGrid,
   Stack,
   Text,
   useColorMode,
   useColorModeValue,
   VisuallyHidden,
-  SimpleGrid,
 } from '@chakra-ui/react';
 export type { HTMLChakraProps } from '@chakra-ui/react';

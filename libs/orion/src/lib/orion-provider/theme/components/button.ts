@@ -40,25 +40,25 @@ export const Button = {
   },
   variants: {
     primary: (props: Dict) => ({
-      bg: mode('indigo.600', 'indigo.200')(props),
-      color: mode('white', 'indigo.800')(props),
+      bg: mode('pink.600', 'pink.200')(props),
+      color: mode('white', 'pink.800')(props),
       _hover: {
-        bg: mode('indigo.700', 'indigo.300')(props),
+        bg: mode('pink.700', 'pink.300')(props),
         _disabled: {
-          bg: mode('indigo.600', 'indigo.200')(props),
+          bg: mode('pink.600', 'pink.200')(props),
         },
       },
       _active: {
-        bg: mode('indigo.800', 'indigo.400')(props),
+        bg: mode('pink.800', 'pink.400')(props),
       },
       _focus: {
         ring: '2px',
-        ringColor: 'indigo.500',
+        ringColor: 'pink.500',
         ringOffset: '2px',
         ringOffsetColor: mode('white', 'gray.800')(props),
       },
       _disabled: {
-        bg: mode('indigo.600', 'indigo.200')(props),
+        bg: mode('pink.600', 'pink.200')(props),
       },
     }),
     secondary: (props: Dict) => ({

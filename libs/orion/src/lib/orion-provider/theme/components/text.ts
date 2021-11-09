@@ -4,7 +4,7 @@ import { Dict } from '@chakra-ui/utils';
 export const Text = {
   variants: {
     supporting: (props: Dict) => ({
-      color: mode('gray.500', 'gray.400')(props),
+      color: mode('gray.400', 'gray.300')(props),
     }),
   },
 };

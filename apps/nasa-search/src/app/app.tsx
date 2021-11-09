@@ -1,5 +1,5 @@
 import { Box } from '@nasa-search/orion';
-import { HomeScreen } from '@nasa-search/feature-files';
+import { FileDetailScreen, HomeScreen } from '@nasa-search/feature-files';
 import { Route, Routes } from 'react-router-dom';
 
 export function App() {
@@ -17,7 +17,7 @@ export function App() {
       >
         <Routes>
           <Route path="/" element={<HomeScreen />} />
-          <Route path="/files/:fileId" element={<div>FilesScreen</div>} />
+          <Route path="/files/:fileId" element={<FileDetailScreen />} />
         </Routes>
       </Box>
     </Box>
