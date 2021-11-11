@@ -2,6 +2,10 @@
 
 A platform for finding files in the NASA file library.
 
+## Deployed on Netlify
+
+You can try the app here: https://elated-minsky-a05dfd.netlify.app/
+
 ## Screenshots
 
 ### Home screen
